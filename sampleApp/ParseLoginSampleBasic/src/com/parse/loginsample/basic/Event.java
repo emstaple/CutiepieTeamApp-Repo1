@@ -1,5 +1,11 @@
 package com.parse.loginsample.basic;
 
+/**
+ * Created by gaoy on 7/7/15.
+ */
+import android.location.Location;
+
+import com.parse.ParseClassName;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
@@ -9,23 +15,30 @@ import java.util.List;
 /**
  * Created by emstaple on 7/6/15.
  */
+
+@ParseClassName("Event")
 public class Event extends ParseObject {
     private String eventObjectId;
     private String Title;
     private Date Time;
-    private android.location.Location Location;
+    private Location Location;
     private String Details;
     private ParseUser CurrentInvitingUser;
     private ParseUser PreviousInvitingUser;
     private List<ParseUser> InterestedUsers;
     private List<ParseUser> AttendingUsers;
 
-    public Event(String title, Date time, android.location.Location location,
-                 String details, ParseUser user) {
+    public Event() {
+
+    }
+
+    public Event(String title, Date time, //Location location,
+                 //String details,
+                 ParseUser user) {
         setTitle(title);
         setTime(time);
-        setDetails(details);
-        setLocation(location);
+        //setDetails(details);
+        //setLocation(location);
     }
 
     public String getTitle() {
@@ -44,15 +57,15 @@ public class Event extends ParseObject {
         Time = time;
     }
 
-    public android.location.Location getLocation() {
-        return Location;
-    }
+    //public Location getLocation() {
+    //  return Location;
+    //}
 
-    public void setLocation(android.location.Location location) {
-        Location = location;
-    }
+    //public void setLocation(Location location) {
+    //    Location = location;
+    //}
 
-    public String getDetails() {
+    /*public String getDetails() {
         return Details;
     }
 
@@ -75,4 +88,5 @@ public class Event extends ParseObject {
     public ParseUser getPreviousInvitingUser() {
         return PreviousInvitingUser;
     }
+    */
 }

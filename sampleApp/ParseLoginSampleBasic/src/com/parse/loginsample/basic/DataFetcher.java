@@ -10,7 +10,7 @@ import java.util.List;
 public class DataFetcher {
     private static final String TAG = "DataFetcher";
 
-    public List<Event> fetchUserFriendEvents() {
+/*    public List<Event> fetchUserFriendEvents() {
         // TODO: Add code for getting Friend events out of Parse
     }
 
@@ -37,4 +37,6 @@ public class DataFetcher {
     public ParseUser fetchEventCurrentChoosingUser() {
         // TODO: Add code for getting the user currently choosing who to invite out of Parse
     }
+
+    */
 }

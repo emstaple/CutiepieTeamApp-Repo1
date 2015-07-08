@@ -1,3 +1,5 @@
+// Copyright 2004-present Facebook. All Rights Reserved.
+
 package com.parse.loginsample.basic;
 
 import android.util.Log;
@@ -7,34 +9,26 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
-import java.util.ArrayList;
-
 /**
- * Created by puku on 7/7/15.
+ * Created by gaoy on 7/7/15.
  */
 public class ParseData {
+    ParseObject events = ParseObject.create(Event.class);
 
-    ParseObject events = new ParseObject("Event");
-    ArrayList<Event> event_list = new ArrayList<>();
-
+    private static final String TAG = "Event";
 
     public void storeEvents(Event event, boolean isAttending) {
 
-              event_list.add(event);
+        if (isAttending) {
+            events.add("Attending", event);
 
-
-            if (isAttending) {
-                events.addAllUnique("Attending", event_list);
-                event_list.remove(event);
-
-            } else {
-                events.addAllUnique("Interested", event_list);
-                event_list.remove(event);
-            }
-            events.saveInBackground();
-
-
+        } else {
+            events.add("Interested", event);
         }
+        events.saveInBackground();
+
+
+    }
 
 
 
@@ -44,16 +38,14 @@ public class ParseData {
             public void done(ParseObject object, ParseException e) {
                 if (e == null) {
                     // object will be your events
-                    ArrayList<Event> Attending_list = events.getArrayList("Attending");
-                    ArrayList<Event> Interested_list = events.getArrayList("Interested");
-
+                    String Attending = events.getString("Attending");
+                    String Interested = events.getString("Interested");
                 } else {
                     Log.e(TAG, "Exception caught!", e);
                 }
             }
         });
     }
-
 
 
 

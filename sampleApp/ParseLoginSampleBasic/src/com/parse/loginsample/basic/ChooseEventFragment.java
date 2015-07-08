@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class ChooseEventFragment extends Fragment {
 
-    private static final String USER_NAME_KEY = "name";
+    //private static final String USER_NAME_KEY = "name";
     private static final String OBJECT_ID_KEY = "objectId";
     private static final String USER_FB_ID_KEY = "authData";
     private static final String USER_FRIEND_EVENT_LIST_KEY = "friendList";
@@ -38,10 +38,10 @@ public class ChooseEventFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mParseUser = ParseUser.getCurrentUser();
-        updateEventList();
+        //updateEventList();
     }
 
-    @Override
+    /*@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle saveInstanceState) {
         View v = inflater.inflate(R.layout.choose_event_fragment, container, false);
@@ -86,4 +86,5 @@ public class ChooseEventFragment extends Fragment {
             //setupAdapter();
         }
     }
+*/
 }

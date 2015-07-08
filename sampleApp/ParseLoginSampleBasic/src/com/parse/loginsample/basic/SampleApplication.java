@@ -22,25 +22,79 @@
 package com.parse.loginsample.basic;
 
 import android.app.Application;
+import android.location.Location;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.TextView;
 
 import com.parse.Parse;
 import com.parse.ParseFacebookUtils;
-import com.parse.ParseTwitterUtils;
+import com.parse.ParseObject;
+import com.parse.ParseUser;
+
+import java.util.Date;
 
 public class SampleApplication extends Application {
+
+  public Event event;
+
+  //public Event event = new Event("title", new Date(1,12,2), new ParseUser());
+  public ParseData parseData;
+
+
   @Override
   public void onCreate() {
     super.onCreate();
     // Required - Initialize the Parse SDK
-    Parse.initialize(this);
+
+    ParseObject.registerSubclass(Event.class);
+
+    event = ParseObject.create(Event.class);
+
+    event.setTitle("Title");
+    event.setTime(new Date(1,2,3));
+    parseData = new ParseData();
+
+    Parse.enableLocalDatastore(this);
+
+    Parse.initialize(this, "hhK2e56IYofzH8HTuoXskijZnRODN64N8r7W31Hk", "P3lkYbVuu6xdi00lfJJGHZOSjYsgqC5g5ygXTMuo");
+
+
+
 
     Parse.setLogLevel(Parse.LOG_LEVEL_DEBUG);
 
     ParseFacebookUtils.initialize(this);
 
-    // Optional - If you don't want to allow Twitter login, you can
-    // remove this line (and other related ParseTwitterUtils calls)
-    ParseTwitterUtils.initialize(getString(R.string.twitter_consumer_key),
-        getString(R.string.twitter_consumer_secret));
+    parseData.storeEvents(event, true);
   }
+
+
+/*
+    private class TestButton implements View.OnClickListener {
+
+        private Event mEvent;
+        private Button mTestButton;
+
+        public CrimeHolder(View itemView) {
+            super(itemView);
+            itemView.setOnClickListener(this);
+        }
+
+        public void bindEvent(Event event) {
+            mEvent = event;
+        }
+
+
+
+        @Override
+        public void onClick(View v) {
+            parseData.storeEvents(mEvent, true);
+        }
+    }
+
+
+          ParseData.storeEvents(event,true);
+*/
 }
