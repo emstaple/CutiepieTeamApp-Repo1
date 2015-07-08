@@ -1,3 +1,5 @@
+// Copyright 2004-present Facebook. All Rights Reserved.
+
 package com.parse.loginsample.basic;
 
 /**
@@ -58,7 +60,7 @@ public class Event extends ParseObject {
     }
 
     //public Location getLocation() {
-    //  return Location;
+      //  return Location;
     //}
 
     //public void setLocation(Location location) {

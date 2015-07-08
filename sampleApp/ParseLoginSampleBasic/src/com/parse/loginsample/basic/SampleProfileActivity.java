@@ -28,8 +28,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.parse.ui.ParseLoginBuilder;
+
 
 /**
  * Shows the user profile. This simple activity can function regardless of whether the user
@@ -49,6 +51,10 @@ public class SampleProfileActivity extends Activity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
+
+
+
+
     setContentView(R.layout.activity_profile);
     titleTextView = (TextView) findViewById(R.id.profile_title);
     emailTextView = (TextView) findViewById(R.id.profile_email);
@@ -60,15 +66,18 @@ public class SampleProfileActivity extends Activity {
       @Override
       public void onClick(View v) {
         if (currentUser != null) {
-          // User clicked to log out.
+          // User clicked to log out. //we don't want this.
           ParseUser.logOut();
           currentUser = null;
           showProfileLoggedOut();
         } else {
           // User clicked to log in.
           ParseLoginBuilder loginBuilder = new ParseLoginBuilder(
-              SampleProfileActivity.this);
+                  SampleProfileActivity.this);
           startActivityForResult(loginBuilder.build(), LOGIN_REQUEST);
+
+
+
         }
       }
     });
@@ -81,6 +90,12 @@ public class SampleProfileActivity extends Activity {
     currentUser = ParseUser.getCurrentUser();
     if (currentUser != null) {
       showProfileLoggedIn();
+      ParseObject events = new ParseObject("Events");
+      events.put("Attending", "GET_FROM_USER");
+
+
+
+
     } else {
       showProfileLoggedOut();
     }
@@ -108,4 +123,10 @@ public class SampleProfileActivity extends Activity {
     nameTextView.setText("");
     loginOrLogoutButton.setText(R.string.profile_login_button_label);
   }
+
+
+
+
+
+
 }

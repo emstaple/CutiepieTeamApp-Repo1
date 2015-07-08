@@ -14,4 +14,15 @@
     <string name="profile_logout_button_label">Log out</string>
     <string name="profile_title_logged_out">You must be logged in to view your profile</string>
     <string name="profile_login_button_label">Log in</string>
+
+    <string name="interested_button">Im Interested!</string>
+    <string name="next_button">Next</string>
+    <string name="explorer_name">Name</string>
+    <string name="going_to">is going to</string>
+    <string name="event_name">Event Name</string>
+    <string name="location">Location</string>
+    <string name="date_time">at Date and Time</string>
+    <string name="explorer_description">Description</string>
+    <string name="invite_friend">Invite a Friend!</string>
+    <string name="change_location">Change Location</string>
 </resources>
