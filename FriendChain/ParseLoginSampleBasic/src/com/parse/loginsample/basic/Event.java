@@ -59,15 +59,15 @@ public class Event extends ParseObject {
         Time = time;
     }
 
-    //public Location getLocation() {
-      //  return Location;
-    //}
+    /*public Location getLocation() {
+        return Location;
+    }
 
-    //public void setLocation(Location location) {
-    //    Location = location;
-    //}
+    public void setLocation(Location location) {
+        Location = location;
+    }
 
-    /*public String getDetails() {
+    public String getDetails() {
         return Details;
     }
 
