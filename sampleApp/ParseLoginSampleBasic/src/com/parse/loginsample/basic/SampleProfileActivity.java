@@ -60,7 +60,7 @@ public class SampleProfileActivity extends Activity {
       @Override
       public void onClick(View v) {
         if (currentUser != null) {
-          // User clicked to log out. //we don't want this.
+          // User clicked to log out.
           ParseUser.logOut();
           currentUser = null;
           showProfileLoggedOut();
