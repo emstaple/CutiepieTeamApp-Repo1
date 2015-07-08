@@ -1,5 +1,3 @@
-// Copyright 2004-present Facebook. All Rights Reserved.
-
 package com.parse.loginsample.basic;
 
 import com.facebook.AccessToken;
@@ -26,7 +24,7 @@ public class FriendRelation {
             /* handle the result */
                         if (true){
                             isSuccessful = true;
-                        }else{
+                        } else {
                             isSuccessful = false;
                         }
                     }
@@ -37,3 +35,4 @@ public class FriendRelation {
     }
 
 }
+
