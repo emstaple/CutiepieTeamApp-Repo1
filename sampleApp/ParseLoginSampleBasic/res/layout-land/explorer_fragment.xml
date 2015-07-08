@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/explorer_container"
+    android:layout_gravity="bottom">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >
+
+        <Button
+            android:id="@+id/interested_event_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/interested_button"/>
+
+        <Button
+            android:id="@+id/next_event_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/next_button"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:orientation="vertical"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:id="@+id/explorer_description">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:layout_gravity="center"
+            android:id="@+id/friend_pic_display"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/explorer_name"
+            android:textSize="30sp"
+            android:padding="5dp"
+            style="?android:listSeparatorTextViewStyle"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/event_name"
+            android:textSize="15sp"
+            android:padding="5dp"
+            style="?android:listSeparatorTextViewStyle"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/location"
+            android:textSize="15sp"
+            android:padding="5dp"
+            style="?android:listSeparatorTextViewStyle"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/date_time"
+            android:textSize="15sp"
+            android:padding="5dp"
+            style="?android:listSeparatorTextViewStyle"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/explorer_description"
+            android:textSize="15sp"
+            android:padding="5dp"
+            style="?android:listSeparatorTextViewStyle"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
