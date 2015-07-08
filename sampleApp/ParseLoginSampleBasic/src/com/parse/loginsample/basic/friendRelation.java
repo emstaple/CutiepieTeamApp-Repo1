@@ -1,5 +1,3 @@
-// Copyright 2004-present Facebook. All Rights Reserved.
-
 package com.parse.loginsample.basic;
 
 import com.facebook.AccessToken;
@@ -8,9 +6,10 @@ import com.facebook.GraphResponse;
 import com.facebook.HttpMethod;
 
 /**
- * Created by gaoy on 7/8/15.
+ * Created by puku on 7/7/15.
  */
-public class FriendRelation {
+public class friendRelation {
+
     boolean isSuccessful;
 
 
@@ -24,7 +23,7 @@ public class FriendRelation {
                 new GraphRequest.Callback() {
                     public void onCompleted(GraphResponse response) {
             /* handle the result */
-                        if (true){
+                        if (response){
                             isSuccessful = true;
                         }else{
                             isSuccessful = false;
@@ -35,5 +34,29 @@ public class FriendRelation {
 
         return isSuccessful;
     }
-
 }
+
+
+
+
+// This is for transferring objects from one user to another.
+// just a sample of code that can be used later
+
+/*
+
+// --- Sending ---
+ParseProxyObject ppo = new ParseProxyObject(myParseObject);
+
+Intent intent = new Intent(ParseProfileActivity.class);
+intent.putExtra("parseObject", ppo);
+
+// --- Receiving ---
+        Intent intent = getIntent();
+        ParseProxyObject ppo = (ParseProxyObject) intent.getSerializableExtra("parseObject");
+        Log.v("Test", String.format("Proxy object name: %s", ppo.getString("name"));
+
+*/
+
+
+
+
