@@ -1,0 +1,10 @@
+/build
+/ParseLoginSampleBasic/build
+/ParseLoginSampleBasic/gen
+/ParseLoginUI/build
+/ParseLoginUI/gen
+
+/.gradle
+/.idea
+
+
